@@ -3,30 +3,91 @@
   padding: 0;
   margin: 0;
   font-family: 'Outfit', sans-serif;
+  /* overflow-x: hidden; */
 }
 
-/* heading stuing */
+  
+
+/* heading styling */
 header{
   background-color: rgba(0,66,116,255);
   height: 80px;
   position: fixed;
   z-index: 1;
   width: 100%;
-  top: 0;
-  
+  top: 0; 
 }
+
+@media screen and (max-width: 1350px){
+  header nav .olami {
+    margin-left: 15rem; 
+    margin-right: 50px;
+  } 
+} 
+
+@media screen and (max-width: 450px) {
+    header .container ul li{
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 450px){
+  header nav {
+    flex-direction: column;
+    justify-content: center;
+    
+  } 
+} 
+
+@media screen and (max-width: 450px){
+  header .container {
+    flex-direction: column;
+    /* padding-bottom: 50px; */
+  } 
+} 
+
+@media screen and (max-width: 450px){
+  header {
+    padding-bottom: 45px;
+  } 
+} 
+
+/* @media screen and (max-width: 450px) {
+  header nav .olami{
+    justify-content: center;
+  }
+} */
+
+@media screen and (max-width: 1105px) {
+  header nav .olami{
+    margin-left: 9rem; 
+    margin-right: 50px;  
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header nav .olami{
+    /* justify-content: center;
+    text-align: center; */
+    margin: auto;  
+  }
+}
+
+
 header .container {
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
-  /* margin: 0 50px; */
+  
   color: white;
-  /* background-color: rgba(0,66,116,255); */
+  
   padding: 10px 20px;
-  justify-content: space-between;  
+  justify-content: space-between; 
+  align-items: center; 
+  display: flex;
 }
 
-.olami{
+nav .olami{
   display: flex;
   /* margin: 0 auto; */
   gap: 15px;
@@ -75,13 +136,20 @@ header .contact{
   color: white;
   font-size: 15px;
 }
+
+
+
+/* Main Page */
 .image-back{
   padding: 15px;
   
 }
 nav {
-  display:flex;
+  display: flex;
+  justify-content: center; /* or space-between */
+  align-items: center;
   margin: 10px;
+  /* justify-content: space-between; */
 }
 
 nav ul {
@@ -101,11 +169,13 @@ nav ul a {
 
 .card-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   padding: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 40px; 
   margin: 0 30px;
+  
+  
 }
 
 .card-container .price, .card-title , .card-description{
@@ -143,10 +213,10 @@ img{
   margin: 0;
 }
 
-.arrow-carousel{
+/* .arrow-carousel{
   max-width: 1200px;
   margin: auto;
-}
+} */
 
 .container-icons{
   display: flex;
@@ -172,6 +242,8 @@ section{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
+  
   
 
   /*
@@ -183,6 +255,8 @@ section{
   */
 }
 
+
+
 #bold-lett{
   font-size: 45px;
 }
@@ -191,14 +265,14 @@ section{
 }
 
 .hero-section .overlay .container{
-  /* padding: 200px 0; */
+  
   height: calc(100vh - 80px);
-  margin: 0 130px;
+  /* margin: 0 130px; */
   max-width: 1200px;
   color: white;
   margin: 80px auto 0 auto;
   padding-top: 40px ;
-  
+  width: 100%;
 }
 
 .overlay{
@@ -211,11 +285,135 @@ section{
   /* padding: 0 32px; */
 }
 
+/* All In 320px & 560px*/
+
+@media screen and (min-width:320px) and (max-width: 560px) {
+  .hero-section{
+    width: 335%; 
+  }
+
+
+  .arrow-carousel{
+    width: 335%;
+  }
+  .card-container{
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    flex-direction: column;
+    align-items: center;
+    gap: 50px; 
+  }
+  .card{
+    width: fit-content;
+    
+  }
+  .sage-section{
+    width: 335%;
+    margin: 0;
+  }
+  .display-home{
+    width: 750px;
+    height: 500px;
+  }
+  .agent-images{
+    flex-direction: column;
+    align-items: center;
+  }
+  .our-agents .agents-louge {
+    width: 600px;
+    height: 600px;
+  }
+
+  .our-agents .agent-text, .our-agents .agent-header {
+    font-size: 25px;
+  }
+
+  footer .finale{
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+  }
+}
+
+
+/* All Responsiveness for 561px - 1022px */
+
+/* Thank God.... I was this close to being crazy lol */
+
+@media screen and (min-width:561px) and (max-width : 1022px){
+
+  .hero-section{
+    width: 160%;
+    margin: 0;
+  }
+
+body{
+    width:125%
+}
+
+  .arrow-carousel{
+    width: 150%;
+  }
+
+   .display-home{
+    
+    height: 460px;
+  }
+
+  .card-container{
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+
+
+.our-agents .agent-images{
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  
+  place-items: center;
+  
+  
+}
+
+
+.our-agents .agent-images .agents-louge{
+  width: 500px;
+  height: 500px;
+}
+
+  .card{
+    width: fit-content;
+  }
+
+
+  footer .finale{
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+  }
+
+}
+
+
+
+
 .carousel{
   padding: 75px 0;
   margin: 0 30px;
   text-align: center;
 }
+
+
+
+
+
+
+
+
 
 .sect-container{
   display: flex;
@@ -232,8 +430,14 @@ section{
   height: 90px;
 }
 
+/* Section Container */
+
 .sage-section{
   padding: 0;
+  /* max-width: 1200px; */
+  margin: 0;
+  width: 100%;
+  
   /*
   margin: auto;
   width: 70%;
@@ -276,8 +480,8 @@ section{
 
 .sage-background{
   padding: 120px 0;
-  margin: 0 60px;
-  width:fit-content;
+  margin: auto;
+  width: 100%;
   color: white;
 }
 
@@ -460,3 +664,7 @@ section{
   text-align: center;
   background-color: #f3f4f8 ;
 }
+
+
+
+
